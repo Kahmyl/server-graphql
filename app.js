@@ -3,10 +3,11 @@ import { graphqlHTTP } from 'express-graphql'
 import schema from './schema/schema.js'
 
 const app = express()
-const port = 3000
+const port = 3001
 
 app.use('/graphql',graphqlHTTP({
-    schema 
+    schema,
+    graphiql: true 
 }));
 
 app.listen(port, () => console.log(` app listening on port ${port}!`))
