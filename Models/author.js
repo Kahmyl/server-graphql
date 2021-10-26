@@ -1,4 +1,4 @@
-import { mongoose } from "mongoose";
+import mongoose  from "mongoose";
 const Schema = mongoose.Schema;
 
 const authorSchema = new Schema({
@@ -6,6 +6,6 @@ const authorSchema = new Schema({
     age: Number
 });
 
-const Author = mongoose.model('Author', bookSchema);
+const Author = mongoose.model('Author', authorSchema);
 
 export default Author
