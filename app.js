@@ -1,9 +1,15 @@
 import express from 'express'
 import { graphqlHTTP } from 'express-graphql'
 import schema from './schema/schema.js'
+import mongoose from 'mongoose'
 
 const app = express()
 const port = 3001
+
+mongoose.connect('mongodb+srv://kamil:habib@kamil.x0n2s.mongodb.net/graphqldb?retryWrites=true&w=majority')
+mongoose.connection.once('open', () => {
+    console.log('connected to database')
+})
 
 app.use('/graphql',graphqlHTTP({
     schema,
